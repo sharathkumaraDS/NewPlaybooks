@@ -1,0 +1,17 @@
+---
+- hosts: windows
+  tasks:
+    - name: Create new group
+      win_group:
+        name: DL-MY-GRP
+        description: test
+        state: present
+
+    - name: Ensure user bob is present
+      win_user:
+        name: bob
+        password: B0bP4ssw0rd
+        state: present
+        groups:
+          - DL-MY-GRP 
+          - Users

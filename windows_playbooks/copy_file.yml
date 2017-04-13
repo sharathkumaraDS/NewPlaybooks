@@ -1,0 +1,12 @@
+---
+- hosts: windows
+  tasks:
+    - name: Copy a single file
+      win_copy:
+         src: /home/dayanand/Downloads/httpd-2.2.25-win32-x86-openssl-0.9.8y(1).msi 
+         deme: Install an MSI file
+    
+    - name: Install Apache2 
+      win_msi:
+         path: c:\httpd-2.2.25-win32-x86-openssl-0.9.8y(1).msi
+      

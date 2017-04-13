@@ -1,0 +1,11 @@
+---
+- hosts: windows
+  tasks:
+    - name: Copy a single file
+      win_copy:
+         src: /home/dayanand/Downloads/mozilla-firefox(17.0.1).msi 
+         dest: c:\
+    - name: Install Apache2 
+      win_msi:
+         path: c:\mozilla-firefox(17.0.1).msi
+      

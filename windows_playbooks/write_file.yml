@@ -1,0 +1,7 @@
+---
+- hosts: windows
+  tasks:
+     - name: Set the contents of a file
+       win_copy:
+          dest: C:\temp.txt
+          content: DEVOPS
